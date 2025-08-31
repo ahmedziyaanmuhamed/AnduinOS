@@ -51,13 +51,7 @@ function judge() {
   fi
 }
 
-function ensureCurrentOsAnduinOs() {
-    # Ensure the current OS is AnduinOS
-    if ! grep -q "DISTRIB_ID=Debian" /etc/lsb-release; then
-        print_error "This script can only be run on AnduinOS."
-        exit 1
-    fi
-}
+
 
 function upgrade_010_to_011() {
     # Add your upgrade steps from 0.1.0 to 0.1.1 here
