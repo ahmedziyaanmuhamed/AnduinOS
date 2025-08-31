@@ -53,7 +53,7 @@ function judge() {
 
 function ensureCurrentOsAnduinOs() {
     # Ensure the current OS is AnduinOS
-    if ! grep -q "DISTRIB_ID=AnduinOS" /etc/lsb-release; then
+    if ! grep -q "DISTRIB_ID=Debian" /etc/lsb-release; then
         print_error "This script can only be run on AnduinOS."
         exit 1
     fi
