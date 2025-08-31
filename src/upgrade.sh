@@ -438,9 +438,9 @@ function upgrade_102_to_103() {
 }
 
 function applyLsbRelease() {
-    # Update /etc/lsb-release
-    sudo sed -i "s/DISTRIB_RELEASE=.*/DISTRIB_RELEASE=${LATEST_VERSION}/" /etc/lsb-release
-    sudo sed -i "s/DISTRIB_DESCRIPTION=.*/DISTRIB_DESCRIPTION=\"AnduinOS ${LATEST_VERSION}\"/" /etc/lsb-release
+    # Update /etc/os-release
+    sudo sed -i "s/DISTRIB_RELEASE=.*/DISTRIB_RELEASE=${LATEST_VERSION}/" /etc/os-release
+    sudo sed -i "s/DISTRIB_DESCRIPTION=.*/DISTRIB_DESCRIPTION=\"AnduinOS ${LATEST_VERSION}\"/" /etc/os-release
     
     # Update /etc/os-release
     sudo sed -i "s/VERSION_ID=.*/VERSION_ID=\"${LATEST_VERSION}\"/" /etc/os-release
@@ -456,7 +456,7 @@ function applyLsbRelease() {
 
 
 
-    # Apply updates to lsb-release, os-release, and issue files
+    # Apply updates to os-release, os-release, and issue files
     applyLsbRelease
     print_ok "System upgraded successfully to version ${LATEST_VERSION}"
 }
