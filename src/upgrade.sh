@@ -455,21 +455,7 @@ function applyLsbRelease() {
     sudo cp /etc/os-release /usr/lib/os-release
 }
 
-function main() {
-    print_ok "Current version is: ${CURRENT_VERSION}. Checking for updates..."
 
-    # Ensure the current OS is AnduinOS
-    ensureCurrentOsAnduinOs
-
-    # Compare current version with latest version
-    if [ "$CURRENT_VERSION" == "$LATEST_VERSION" ]; then
-        print_ok "Your system is already up to date. No update available."
-        exit 0
-    fi
-
-    print_ok "This script will upgrade your system to version ${LATEST_VERSION}..."
-    print_ok "Please press CTRL+C to cancel... Countdown will start in 5 seconds..."
-    sleep 5
 
     # Run necessary upgrades based on current version
     case "$CURRENT_VERSION" in
